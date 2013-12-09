@@ -1,0 +1,36 @@
+<%= form_for(@attendant, html: { role: "form", class: "form"}) do |f| %>
+  <% if @attendant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendant.errors.count, "error") %> prohibited this attendant from being saved:</h2>
+
+      <ul>
+      <% @attendant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :full_name %><br />
+    <%= f.text_field :full_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Will come?" %><br />
+    <%= f.select :will_come, %w(maybe yes no), class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Comes with" %><br />
+    <%= f.select :comes_with, (0..5), class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Submit", class: "btn btn-default" %>
+<% end %>

@@ -1,6 +1,6 @@
 <div class="page-header">
-  <h2>Welcome to Awesome Party</h2>
-  <h3>Be ready to organize the most amazing party ever!</h3>
+  <h2>Welcome to Attendants</h2>
+  <h3>Easily manage your event's attendants</h3>
 </div>
 
 <% unless signed_in? %>
@@ -13,7 +13,7 @@
     <p>
       You are logged in as <%= current_user.email %>
     </p>
-    <p><%= link_to "See your parties", parties_path, class: "btn btn-primary" %></p>
+    <p><%= link_to "See your attendants", attendants_path, class: "btn btn-primary" %></p>
   </div>
   
 <% end %>

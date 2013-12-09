@@ -1,0 +1,30 @@
+<h1>Listing attendants</h1>
+
+<table class="table">
+  <tr>
+    <th>Full name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Will come?</th>
+    <th>Comes with</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attendants.each do |attendant| %>
+  <tr>
+    <td><%= attendant.full_name %></td>
+    <td><%= attendant.phone %></td>
+    <td><%= attendant.email %></td>
+    <td><%= attendant.will_come %></td>
+    <td><%= attendant.comes_with %></td>
+    <td><%= link_to 'Edit', edit_attendant_path(attendant) %></td>
+    <td><%= link_to 'Destroy', attendant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attendant', new_attendant_path, class: "btn btn-primary" %>

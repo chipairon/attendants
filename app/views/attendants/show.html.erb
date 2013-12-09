@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Full name:</b>
+  <%= @attendant.full_name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @attendant.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @attendant.email %>
+</p>
+
+<br>
+
+<%= link_to 'Edit', edit_attendant_path(@attendant), class: "btn btn-primary" %> |
+<%= link_to 'Back', attendants_path, class: "btn btn-primary" %>

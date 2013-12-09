@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email
 
-  has_many :parties
+  has_many :attendants
 
   def self.find_or_create_for_doorkeeper_oauth(oauth_data)
     User.find_or_initialize_by_doorkeeper_uid(oauth_data.uid).tap do |user|
@@ -20,8 +20,6 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      byebug
-      puts "yeah"
     end
   end
 end

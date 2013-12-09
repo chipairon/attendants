@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205110557) do
+ActiveRecord::Schema.define(:version => 20131205141435) do
+
+  create_table "attendants", :force => true do |t|
+    t.string   "full_name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "will_come",  :default => "maybe"
+    t.integer  "comes_with", :default => 0
+    t.string   "permalink"
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
 
   create_table "parties", :force => true do |t|
     t.string   "title"
